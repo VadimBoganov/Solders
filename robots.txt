@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /images/
+Sitemap: https://gk-fulgur.ru/sitemap.xml
+
+User-agent: YandexBot
+Disallow: /images/
+Host: www.gk-fulgur.ru
+Sitemap: https://gk-fulgur.ru/sitemap.xml
