@@ -49,3 +49,5 @@ function updateLeftMenu(){
 
 window.addEventListener("resize", updateLeftMenu);
 
+$(document).ready(function(){$(".animscroll").on("click","a",function(t){t.preventDefault();var e=$(this).attr("href"),n=$(e).offset().top;$("body,html").animate({scrollTop:n},500)}),$(window).scroll(function(){$(this).scrollTop()>100?$(".scrollup").fadeIn():$(".scrollup").fadeOut()}),$(".scrollup").click(function(){return $("html, body").animate({scrollTop:0},500),!1})});
+
