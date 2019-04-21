@@ -3,312 +3,372 @@
 		<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
 	<loc>https://gk-fulgur.ru/</loc>
-	<lastmod>2019-03-24T14:50:40+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:26+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
+	<loc>https://gk-fulgur.ru/metali/</loc>
+	<lastmod>2019-04-21T19:21:30+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/o2/</loc>
+	<lastmod>2019-04-21T19:21:30+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/o1/</loc>
+	<lastmod>2019-04-21T19:21:32+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/o1pch/</loc>
+	<lastmod>2019-04-21T19:21:31+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/op/</loc>
+	<lastmod>2019-04-21T19:21:31+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/ovch00/</loc>
+	<lastmod>2019-04-21T19:21:31+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/ovch000/</loc>
+	<lastmod>2019-04-21T19:21:32+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/in2/</loc>
+	<lastmod>2019-04-21T19:21:32+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/in0/</loc>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/in00/</loc>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/in000/</loc>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://gk-fulgur.ru/metali/in0000/</loc>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
 	<loc>https://gk-fulgur.ru/pripoi/</loc>
-	<lastmod>2019-03-24T14:50:41+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos10/</loc>
-	<lastmod>2019-03-24T14:50:42+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos20/</loc>
-	<lastmod>2019-03-24T14:50:42+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos30/</loc>
-	<lastmod>2019-03-24T14:50:43+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos40/</loc>
-	<lastmod>2019-03-24T14:50:43+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos50/</loc>
-	<lastmod>2019-03-24T14:50:43+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos60/</loc>
-	<lastmod>2019-03-24T14:50:44+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:33+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos61/</loc>
-	<lastmod>2019-03-24T14:50:44+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos61M/</loc>
-	<lastmod>2019-03-24T14:50:45+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos70/</loc>
-	<lastmod>2019-03-24T14:50:45+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pos90/</loc>
-	<lastmod>2019-03-24T14:50:46+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/posk2-18/</loc>
-	<lastmod>2019-03-24T14:50:47+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/posk50-18/</loc>
-	<lastmod>2019-03-24T14:50:47+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu18-05/</loc>
-	<lastmod>2019-03-24T14:50:48+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu25-05/</loc>
-	<lastmod>2019-03-24T14:50:49+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu30-05/</loc>
-	<lastmod>2019-03-24T14:50:49+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:34+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu35-05/</loc>
-	<lastmod>2019-03-24T14:50:50+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu40-05/</loc>
-	<lastmod>2019-03-24T14:50:51+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu50-05/</loc>
-	<lastmod>2019-03-24T14:50:51+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu61-05/</loc>
-	<lastmod>2019-03-24T14:50:52+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu4-4/</loc>
-	<lastmod>2019-03-24T14:50:53+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu4-6/</loc>
-	<lastmod>2019-03-24T14:50:53+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu5-1/</loc>
-	<lastmod>2019-03-24T14:50:54+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu8-3/</loc>
-	<lastmod>2019-03-24T14:50:55+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:35+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu10-2/</loc>
-	<lastmod>2019-03-24T14:50:55+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu15-2/</loc>
-	<lastmod>2019-03-24T14:50:56+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu18-2/</loc>
-	<lastmod>2019-03-24T14:50:57+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu25-2/</loc>
-	<lastmod>2019-03-24T14:50:57+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu30-2/</loc>
-	<lastmod>2019-03-24T14:50:58+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu35-2/</loc>
-	<lastmod>2019-03-24T14:50:59+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/possu40-2/</loc>
-	<lastmod>2019-03-24T14:50:59+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/posu95-5/</loc>
-	<lastmod>2019-03-24T14:51:00+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/ingl05/</loc>
-	<lastmod>2019-03-24T14:51:01+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/inz1/</loc>
-	<lastmod>2019-03-24T14:51:01+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:36+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/ossu34-1/</loc>
-	<lastmod>2019-03-24T14:51:02+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/osu1/</loc>
-	<lastmod>2019-03-24T14:51:03+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/osu2/</loc>
-	<lastmod>2019-03-24T14:51:04+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/osu10/</loc>
-	<lastmod>2019-03-24T14:51:04+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/pink24/</loc>
-	<lastmod>2019-03-24T14:51:05+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/posu9/</loc>
-	<lastmod>2019-03-24T14:51:06+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/psin5/</loc>
-	<lastmod>2019-03-24T14:51:07+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/psin25/</loc>
-	<lastmod>2019-03-24T14:51:07+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/sin-20/</loc>
-	<lastmod>2019-03-24T14:51:08+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/sin-50/</loc>
-	<lastmod>2019-03-24T14:51:09+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/so10/</loc>
-	<lastmod>2019-03-24T14:51:09+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:37+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/b83/</loc>
-	<lastmod>2019-03-24T14:51:10+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/b83s/</loc>
-	<lastmod>2019-03-24T14:51:11+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/b88/</loc>
-	<lastmod>2019-03-24T14:51:11+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/b16/</loc>
-	<lastmod>2019-03-24T14:51:12+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/bs6/</loc>
-	<lastmod>2019-03-24T14:51:13+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/bn/</loc>
-	<lastmod>2019-03-24T14:51:14+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/bka/</loc>
-	<lastmod>2019-03-24T14:51:14+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/bk2/</loc>
-	<lastmod>2019-03-24T14:51:15+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/bk2sh/</loc>
-	<lastmod>2019-03-24T14:51:16+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/cam4-1/</loc>
-	<lastmod>2019-03-24T14:51:16+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/cam10-5/</loc>
-	<lastmod>2019-03-24T14:51:17+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:38+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/cam9-1,5/</loc>
-	<lastmod>2019-03-24T14:51:18+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:39+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/p200a/</loc>
-	<lastmod>2019-03-24T14:51:18+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:39+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/p250a/</loc>
-	<lastmod>2019-03-24T14:51:19+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:39+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/p300a/</loc>
-	<lastmod>2019-03-24T14:51:20+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:39+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 <url>
 	<loc>https://gk-fulgur.ru/pripoi/avia/</loc>
-	<lastmod>2019-03-24T14:51:20+01:00</lastmod>
+	<lastmod>2019-04-21T19:21:39+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
 </urlset>
