@@ -11,9 +11,9 @@ h1 {font-family: "Helvetica";
 font-weight: 300;
 color: #FFFFFF;
 background-color:#1f2430;
-height:80px;
 font-size: 35px;
-padding-top:20px;
+padding-top:10px;
+padding-bottom: 10px;
 text-align: center;
 }
 h2,
