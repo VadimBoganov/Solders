@@ -1,0 +1,27 @@
+.info {
+    padding: 30px 0;
+}
+
+.info__table {
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0;
+}
+
+.info__table-header, .info__table-data{
+    border: 1px solid #ddd;
+}
+
+.info__table-header{
+    background-color: #538ed5;
+    color: #fff;
+}
+
+.info__table-data{
+    background-color: #b8cce4;
+    color: #000;
+}
+
+details {
+    cursor: pointer;
+}

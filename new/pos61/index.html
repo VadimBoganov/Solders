@@ -1,0 +1,111 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Sofia+Sans:wght@300;500;700&display=swap">
+    <script type="text/javascript">
+        (async () => {
+            let response = await fetch('http://localhost:8000/api/products')
+            let products = await response.json()
+            let product = products.filter((item) => item.Name === 'Припои и сплавы')[0]
+
+            response = await fetch('http://localhost:8000/api/producttypes?productid=' + product.Id)
+            let productTypes = await response.json()
+
+            productTypes.forEach((pt) => {
+                let link = document.createElement('a')
+                link.setAttribute('href', '#')
+                link.innerHTML = pt.Name
+
+                let links = document.getElementsByClassName('links__table')[0]
+                    .appendChild(link)
+            })
+
+            response = await fetch('http://localhost:8000/api/productitems');
+            let productItems = await response.json(); 
+            let productItem = productItems.filter((item) => item.Name === "Пос-61")[0]
+
+            response = await fetch('http://localhost:8000/api/items?productitemid=' + productItem.Id)
+            let items = await response.json()
+
+            items.forEach((item) => {
+                let titleDiv = document.createElement('div')
+                titleDiv.classList.add('card__title')
+                titleDiv.innerHTML = item.Name
+
+                let priceDiv = document.createElement('div')
+                priceDiv.classList.add('card__price')
+                priceDiv.innerHTML = 'Цена от ' + '<span class="card__price-span">'  + item.Price + ' &#8381' + '</span>' 
+
+                let descriptionDiv = document.createElement('div')
+                descriptionDiv.classList.add('card__description')
+
+                descriptionDiv.appendChild(titleDiv)
+                descriptionDiv.appendChild(priceDiv)
+
+                let bodyDiv = document.createElement('div')
+                bodyDiv.classList.add('card__body')                    
+
+                bodyDiv.appendChild(descriptionDiv)
+
+                let button = document.createElement('button')
+                button.classList.add('card__button')
+                button.setAttribute('type', 'button')
+                button.innerHTML = 'Заказать'
+
+                bodyDiv.appendChild(button)
+
+                let img = document.createElement('img')
+                img.setAttribute('src', item.ImageUrl)
+                img.setAttribute('alt', item.Name)
+                img.classList.add('card__img')
+
+                let containerDiv = document.createElement('div')
+                containerDiv.classList.add('card__container')
+
+                containerDiv.appendChild(img)
+                containerDiv.appendChild(bodyDiv)
+                    
+                let card = document.getElementsByClassName('body__cards')[0]
+                    .appendChild(containerDiv)
+            });
+        })()
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="links">
+        <div class="container">
+            <div class="links__table">
+                
+            </div>
+        </div>
+    </div>
+    <section class="body">
+        <div class="container">
+            <div class="body__header">
+                <h2 class="body__header-title">ПРИПОЙ ПОС-61</h2>
+            </div> 
+            <div class="body__cards">
+            </div>
+        </div>
+    </section>
+    <div id="info"></div>
+    <div id="footer"></div>
+
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="../../components/header/header.css">
+    <link rel="stylesheet" type="text/css" href="../../components/info/info.css">
+    <link rel="stylesheet" type="text/css" href="../../components/footer/footer.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script src="../../components/header/header.js" type="text/babel"></script>
+    <script src="../../components/info/info.js" type="text/babel"></script>
+    <script src="../../components/footer/footer.js" type="text/babel"></script>
+</body>
+</html>
