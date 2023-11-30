@@ -8,6 +8,21 @@
         (async () => {
             let response = await fetch('http://localhost:8000/api/products')
             let products = await response.json()
+
+            products.forEach((product) => {
+                let link = document.createElement('a')
+                link.setAttribute('href', '#')
+                link.innerHTML = product.Name
+
+                if (product.Name === 'Припои и сплавы'){
+                    console.log(product)
+                    link.classList.add('active')
+                }
+
+                let links = document.getElementsByClassName('links__table-products')[0]
+                    .appendChild(link)
+            })
+
             let product = products.filter((item) => item.Name === 'Припои и сплавы')[0]
 
             response = await fetch('http://localhost:8000/api/producttypes?productid=' + product.Id)
@@ -18,7 +33,7 @@
                 link.setAttribute('href', '#')
                 link.innerHTML = pt.Name
 
-                let links = document.getElementsByClassName('links__table')[0]
+                let links = document.getElementsByClassName('links__table-items')[0]
                     .appendChild(link)
             })
 
@@ -77,9 +92,8 @@
     <div id="header"></div>
     <div class="links">
         <div class="container">
-            <div class="links__table">
-                
-            </div>
+            <div class="links__table-products"></div>
+            <div class="links__table-items"></div>
         </div>
     </div>
     <section class="body">

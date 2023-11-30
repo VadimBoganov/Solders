@@ -6,6 +6,12 @@ thead, tr, th {
     margin-bottom: 50px;
 }
 
+.active {
+    color: white !important;
+    background-color: rgb(72, 65, 136) !important;
+    pointer-events: none;
+}
+
 .body__header-title {
     font-weight: 900;
     font-size: 36px;
@@ -86,7 +92,7 @@ thead, tr, th {
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.links__table {
+.links__table-items, .links__table-products {
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
@@ -96,14 +102,33 @@ thead, tr, th {
     margin: 65px 0;
 }
 
-.links__table a {
+.links__table-items a {
     padding: 8px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-bg-color);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.links__table-products a {
+    padding: 14px;
+    margin-bottom: 10px;
     text-decoration: none;
     color: white;
     background-color: var(--main-bg-color);
     border-radius: 5px;
 }
 
-.links__table a:hover{
+.links__table-items .links__table-products, a:hover{
     background-color: var(--main-bg-color-hover);
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+  
+@keyframes sweep {
+    0%    {opacity: 0; margin-left: -10px}
+    100%  {opacity: 1; margin-left: 0px}
 }
