@@ -2,90 +2,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Пос-61</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Sofia+Sans:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="../generator.js"></script>
     <script type="text/javascript">
-        (async () => {
-            let response = await fetch('http://localhost:8000/api/products')
-            let products = await response.json()
-
-            products.forEach((product) => {
-                let link = document.createElement('a')
-                link.setAttribute('href', '#')
-                link.innerHTML = product.Name
-
-                if (product.Name === 'Припои и сплавы'){
-                    console.log(product)
-                    link.classList.add('active')
-                }
-
-                let links = document.getElementsByClassName('links__table-products')[0]
-                    .appendChild(link)
-            })
-
-            let product = products.filter((item) => item.Name === 'Припои и сплавы')[0]
-
-            response = await fetch('http://localhost:8000/api/producttypes?productid=' + product.Id)
-            let productTypes = await response.json()
-
-            productTypes.forEach((pt) => {
-                let link = document.createElement('a')
-                link.setAttribute('href', '#')
-                link.innerHTML = pt.Name
-
-                let links = document.getElementsByClassName('links__table-items')[0]
-                    .appendChild(link)
-            })
-
-            response = await fetch('http://localhost:8000/api/productitems');
-            let productItems = await response.json(); 
-            let productItem = productItems.filter((item) => item.Name === "Пос-61")[0]
-
-            response = await fetch('http://localhost:8000/api/items?productitemid=' + productItem.Id)
-            let items = await response.json()
-
-            items.forEach((item) => {
-                let titleDiv = document.createElement('div')
-                titleDiv.classList.add('card__title')
-                titleDiv.innerHTML = item.Name
-
-                let priceDiv = document.createElement('div')
-                priceDiv.classList.add('card__price')
-                priceDiv.innerHTML = 'Цена от ' + '<span class="card__price-span">'  + item.Price + ' &#8381' + '</span>' 
-
-                let descriptionDiv = document.createElement('div')
-                descriptionDiv.classList.add('card__description')
-
-                descriptionDiv.appendChild(titleDiv)
-                descriptionDiv.appendChild(priceDiv)
-
-                let bodyDiv = document.createElement('div')
-                bodyDiv.classList.add('card__body')                    
-
-                bodyDiv.appendChild(descriptionDiv)
-
-                let button = document.createElement('button')
-                button.classList.add('card__button')
-                button.setAttribute('type', 'button')
-                button.innerHTML = 'Заказать'
-
-                bodyDiv.appendChild(button)
-
-                let img = document.createElement('img')
-                img.setAttribute('src', item.ImageUrl)
-                img.setAttribute('alt', item.Name)
-                img.classList.add('card__img')
-
-                let containerDiv = document.createElement('div')
-                containerDiv.classList.add('card__container')
-
-                containerDiv.appendChild(img)
-                containerDiv.appendChild(bodyDiv)
-                    
-                let card = document.getElementsByClassName('body__cards')[0]
-                    .appendChild(containerDiv)
-            });
-        })()
+        (async (host, port, productsSelector, productTypeSelector, itemsSelector) => {
+            const products = await GenerateProductsLinks(host, port, productsSelector)
+            let product = products.filter((item) => item.name === productsSelector)[0]
+            await GenerateProductTypesLinks(host, port, product.id, productTypeSelector)
+            await GenerateItems(host, port, itemsSelector)
+        })("localhost", 5227, 'Припои и сплавы', 'Оловянно-свинцовые', 'Пос-61')
     </script>
 </head>
 <body>
@@ -96,8 +23,10 @@
             <div class="links__table-items"></div>
         </div>
     </div>
+   
     <section class="body">
         <div class="container">
+            <!-- <hr> -->
             <div class="body__header">
                 <h2 class="body__header-title">ПРИПОЙ ПОС-61</h2>
             </div> 

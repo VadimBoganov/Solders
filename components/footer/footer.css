@@ -4,7 +4,7 @@
 
 .footer {
     padding: 35px 0 56px;
-    background-color: var(--main-bg-color);
+    background-color: #1E1F25;
 }
 
 .footer__row {
@@ -14,7 +14,7 @@
 }
 
 .footer__img{
-    width: 110px;
+    width: 85px;
 }
 
 .footer__col{
@@ -25,27 +25,41 @@
     width: -webkit-fill-available;
 }
 
+.footer__col a:hover {
+    color: var(--link-hover);
+}
+
 .footer__col-header{
     padding-bottom: 10px;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 18px;
     color: #696f75;
 }
 
 .footer__row a {
     color: rgb(255, 255, 255);
     text-decoration: none;
+    font-size: 14px;
 }
 
 .footer__row a:hover{
-    color: rgb(150, 147, 147);
+    background-color: #1E1F25;
 }
 
 .footer__text {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .footer__text-end{
     color: rgb(150, 147, 147);
     font-size: 14px;
+}
+
+.footer__col-social{
+    display: flex;
+    align-items: center;
+}
+
+.footer__col-social img {
+    padding-left: 5px;
 }

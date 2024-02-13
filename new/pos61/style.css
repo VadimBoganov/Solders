@@ -1,7 +1,3 @@
-thead, tr, th {
-    padding: 8px;
-}
-
 .body__header {
     margin-bottom: 50px;
 }
@@ -14,30 +10,41 @@ thead, tr, th {
 
 .body__header-title {
     font-weight: 900;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.04;
     letter-spacing: 0.06em;
+    text-align: center;
 }
 
 .body__cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 323px);
+    grid-template-columns: repeat(auto-fill, 255px);
     grid-auto-rows: auto;
     grid-auto-flow: row;
     gap: 10px;
 }
 
 .card__container {
-    border: 1px solid #ddd;
     border-radius: 8px;
+    background-color: var(--main-bg-color);
+}
+
+.card__container a:hover {
+    background-color: var(--main-bg-color);
 }
 
 .card__img {
     padding: 8px 8px;
     width: -webkit-fill-available;
-    height: 300px;
-    border-radius: 20px;
+    height: 230px;
+    border-radius: 13px;
     margin-bottom: 28px;
+    filter: invert(0);
+}
+
+.card__img:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
 }
 
 .card__body {
@@ -49,7 +56,7 @@ thead, tr, th {
     padding: 0 8px;
     margin-bottom: 7px;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1.56;
     letter-spacing: -0.04em;
 }
@@ -57,32 +64,33 @@ thead, tr, th {
 .card__price {
     padding: 0 0 0 8px;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 2.08;
     letter-spacing: -0.04em;
     color: gray;
 }
 
 .card__price-span{
-    color: var(--main-bg-color);
+    color: #8183e3;
 }
 
 .card__button {
     border: none;
     margin: 0 8px 8px 0;
     align-self: self-end;
-    width: 105px;
-    height: 40px;
+    width: 97px;
+    height: 32px;
     font-weight: 500;
     font-size: 18px;
-    background-color: var(--main-bg-color);
+    background-color: var(--button-order);
     color: white;
     border-radius: 3px;
     font-family: Montserrat, sans-serif;
+    transition: var(--transition); 
 }
 
 .card__button:hover{
-    background-color: var(--main-bg-color-hover);
+    background-color: var(--button-order-hover);
     cursor: pointer;
 }
 
@@ -106,22 +114,21 @@ thead, tr, th {
     padding: 8px;
     text-decoration: none;
     color: white;
-    background-color: var(--main-bg-color);
     border-radius: 5px;
     margin-top: 15px;
+    transition: var(--transition); 
 }
 
 .links__table-products a {
-    padding: 14px;
-    margin-bottom: 10px;
+    padding: 8px;
     text-decoration: none;
     color: white;
-    background-color: var(--main-bg-color);
     border-radius: 5px;
+    transition: var(--transition); 
 }
 
 .links__table-items .links__table-products, a:hover{
-    background-color: var(--main-bg-color-hover);
+    background-color: var(--button);
 }
 
 details[open] summary ~ * {

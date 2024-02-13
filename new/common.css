@@ -1,10 +1,21 @@
 :root {
+    --bg: #353538;
     --main-bg-color: #202430;
     --main-bg-color-hover: #0e0f14;
-    color-scheme: light dark;
-  }
+    --dark: #191919;
+    --link-hover: #ddd;
+    --button: rgb(72, 65, 136) !important;
+    --button-order: #177810 !important;
+    --button-order-hover: #369d4c;
+    --button-hover: #8183e3;
+    --transition: all 350ms ease-in-out;
 
-body{
+    color-scheme: light dark;
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
     font-family: Montserrat, sans-serif;
     margin: 0;
 }
@@ -20,8 +31,43 @@ select {
     line-height: 33px;
 }
 
+thead,
+tr,
+th {
+    padding: 8px;
+}
+
 .container {
     max-width: 1324px;
     margin: 0 auto;
     padding: 0 30px;
+}
+
+.checked {
+    background-color: var(--main-bg-color);
+    cursor: default;
+}
+
+.checked:hover {
+    background-color: var(--main-bg-color);
+}
+
+.disable {
+    display: none;
+}
+
+details[open] summary~* {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        margin-left: -10px
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0px
+    }
 }
