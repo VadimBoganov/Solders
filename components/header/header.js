@@ -12,16 +12,16 @@ function Header() {
                     </button>
                     <nav className="header__nav">
                         <ul>
-                            <li><a href="#!">Главная</a></li>
+                            <li><a href="../../">Главная</a></li>
                             <div className="header__dropdown">
                                 <button className="header__dropdown-btn">Продукты <img src="../../images/dropdown.png" /></button>
                                 <div className="header__dropdown-content">
-                                    <a href="#">Металы</a>
-                                    <a href="#">Припои</a>
+                                    <a href="/metali">Металы</a>
+                                    <a href="/pripoi">Припои</a>
                                 </div>
                             </div>
-                            <li><a className="header__link-3rd" href="#">О нас</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a className="header__link-3rd" href="../../#Our">О нас</a></li>
+                            <li><a href="../../#contacts">Контакты</a></li>
                             <li><a href="#">Статьи</a></li>
                         </ul>
                     </nav>

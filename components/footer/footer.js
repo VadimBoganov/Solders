@@ -8,14 +8,14 @@ function Footer() {
                     </div>
                     <div className="footer__col">
                         <div className="footer__col-header">Фулгур</div>
-                        <div><a href="#">О Нас</a></div>
+                        <div><a href="../../#Our">О Нас</a></div>
+                        <div><a href="../../#contacts">Контакты</a></div>
                         <div><a href="#">Статьи</a></div>
-                        <div><a href="#">Контакты</a></div>
                     </div>
                     <div className="footer__col">
                         <div className="footer__col-header">Продукты</div>
-                        <div><a href="#">Металы</a></div>
-                        <div><a href="#">Припои</a></div>
+                        <div><a href="/metali">Металы</a></div>
+                        <div><a href="/pripoi">Припои</a></div>
                     </div>
                     <div className="footer__col">
                         <div className="footer__col-header">Социальные сети</div>
