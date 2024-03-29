@@ -4,7 +4,7 @@ async function GenerateProductsLinks(host, port, selector) {
 
   products.forEach((product) => {
     let link = document.createElement("a");
-    link.setAttribute("href", "#");
+    link.setAttribute("href", product.link);
     link.innerHTML = product.name;
 
     if (product.name == selector)
@@ -18,15 +18,12 @@ async function GenerateProductsLinks(host, port, selector) {
   return products;
 }
 
-async function GenerateProductTypesLinks(host, port, id, selector) {
-  response = await fetch(
-    `http://${host}:${port}/api/producttypes?productid=${id}`
-  );
-  let productTypes = await response.json();
+async function GenerateProductTypesLinks(host, port, productId, selector) {
+  let productTypes = await GetProductTypes(host, port)
 
-  productTypes.forEach((pt) => {
+  productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let link = document.createElement("a");
-    link.setAttribute("href", "#");
+    link.setAttribute("href", pt.link);
     link.innerHTML = pt.name;
 
     if (pt.name == selector)
@@ -34,6 +31,45 @@ async function GenerateProductTypesLinks(host, port, id, selector) {
 
     document.getElementsByClassName("links__table-items")[0].appendChild(link);
   });
+}
+
+async function GenerateProductTypesList(host, port, productId) {
+  let productTypes = await GetProductTypes(host, port)
+  let productSubTypes = await GetProductSubTypes(host, port)
+  let productItems = await GetProductItems(host, port)
+  let items = await GetItems(host, port)
+
+  productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
+    let subTypes = productSubTypes.filter((pst) => pst.productTypeId === pt.id)
+    
+    subTypes.forEach((st) => {
+      productItems.filter((pi) => pi.productSubTypeId === st.id).forEach((pi) => {
+        let link = document.createElement("a");
+        link.setAttribute("href", pi.link);
+        
+        let innerSelector = document.createElement("div")
+        innerSelector.classList.add("product-item__data")
+        innerSelector.innerHTML += pi.name
+        innerSelector.innerHTML += ` (${subTypes.filter((st) => st.id === pi.productSubTypeId)[0].name})`
+
+        let itemSelector = document.createElement("div")
+        itemSelector.classList.add("item__data")
+
+        items.filter((i) => i.productItemId === pi.id).forEach((i) => {
+          itemSelector.innerHTML += ` ${i.name}`
+        })
+        
+        let detailsLink = document.createElement("div")
+        detailsLink.classList.add('link__details')
+        detailsLink.innerHTML += "Подробнее"
+
+        link.appendChild(innerSelector)
+        link.appendChild(itemSelector)
+        link.appendChild(detailsLink)
+        document.getElementsByClassName("links__product-items")[0].appendChild(link)
+      })
+    })
+  })
 }
 
 async function GenerateItems(host, port, selector) {
@@ -84,7 +120,7 @@ async function GenerateItems(host, port, selector) {
     img.classList.add("card__img");
 
     let imgLink = document.createElement("a");
-    imgLink.setAttribute("href", "#");
+    imgLink.setAttribute("href", item.link);
     imgLink.appendChild(img)
 
     let containerDiv = document.createElement("div");
@@ -97,4 +133,24 @@ async function GenerateItems(host, port, selector) {
       .getElementsByClassName("body__cards")[0]
       .appendChild(containerDiv);
   });
+}
+
+async function GetProductTypes(host, port) {
+  response = await fetch(`http://${host}:${port}/api/producttypes`);
+  return await response.json();
+}
+
+async function GetProductSubTypes(host, port) {
+  let response = await fetch(`http://${host}:${port}/api/productsubtypes`)
+  return await response.json();
+}
+
+async function GetProductItems(host, port) {
+  let response = await fetch(`http://${host}:${port}/api/productitems`)
+  return await response.json()
+}
+
+async function GetItems(host, port) {
+  let response = await fetch(`http://${host}:${port}/api/items`)
+  return await response.json()
 }
