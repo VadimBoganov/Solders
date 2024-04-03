@@ -33,7 +33,7 @@ async function GenerateProductTypesLinks(host, port, productId, selector) {
   });
 }
 
-async function GenerateProductTypesList(host, port, productId) {
+async function GenerateProductItemsList(host, port, productId) {
   let productTypes = await GetProductTypes(host, port)
   let productSubTypes = await GetProductSubTypes(host, port)
   let productItems = await GetProductItems(host, port)
@@ -41,33 +41,39 @@ async function GenerateProductTypesList(host, port, productId) {
 
   productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let subTypes = productSubTypes.filter((pst) => pst.productTypeId === pt.id)
+    let h = document.createElement("h3")
+    h.innerHTML += `${pt.name}:`
+    document.getElementsByClassName("links__product-items")[0].appendChild(h)
     
-    subTypes.forEach((st) => {
-      productItems.filter((pi) => pi.productSubTypeId === st.id).forEach((pi) => {
-        let link = document.createElement("a");
-        link.setAttribute("href", pi.link);
-        
-        let innerSelector = document.createElement("div")
-        innerSelector.classList.add("product-item__data")
-        innerSelector.innerHTML += pi.name
-        innerSelector.innerHTML += ` (${subTypes.filter((st) => st.id === pi.productSubTypeId)[0].name})`
+    productItems.filter((pi) => pi.productTypeId === pt.id).forEach((pi) => {
+      let link = document.createElement("a");
+      link.setAttribute("href", pi.link);
+      
+      let innerSelector = document.createElement("div")
+      innerSelector.classList.add("product-item__data")
+      
+      let subType = subTypes.filter((st) => st.id === pi.productSubTypeId)[0]
+      innerSelector.innerHTML += `${pi.name } <span>${subType !== undefined ? subType.name : "" }</span>`
 
-        let itemSelector = document.createElement("div")
-        itemSelector.classList.add("item__data")
+      let itemSelector = document.createElement("div")
+      itemSelector.classList.add("item__data")
 
-        items.filter((i) => i.productItemId === pi.id).forEach((i) => {
-          itemSelector.innerHTML += ` ${i.name}`
-        })
-        
-        let detailsLink = document.createElement("div")
-        detailsLink.classList.add('link__details')
-        detailsLink.innerHTML += "Подробнее"
-
-        link.appendChild(innerSelector)
-        link.appendChild(itemSelector)
-        link.appendChild(detailsLink)
-        document.getElementsByClassName("links__product-items")[0].appendChild(link)
+      items.filter((i) => i.productItemId === pi.id).forEach((i) => {
+        itemSelector.innerHTML += ` ${i.name}`
       })
+      
+      let detailsLink = document.createElement("div")
+      detailsLink.classList.add('link__details')
+      detailsLink.innerHTML += "Подробнее"
+
+      link.appendChild(innerSelector)
+      link.appendChild(itemSelector)
+      link.appendChild(detailsLink)
+      document.getElementsByClassName("links__product-items")[0].appendChild(link)
+    })
+
+    subTypes.forEach((st) => {
+      
     })
   })
 }

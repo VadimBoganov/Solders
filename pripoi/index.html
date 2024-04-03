@@ -10,7 +10,7 @@
         (async (host, port, productsSelector) => {
             const products = await GenerateProductsLinks(host, port, productsSelector)
             let product = products.filter((item) => item.name === productsSelector)[0]
-            await GenerateProductTypesList(host, port, product.id)
+            await GenerateProductItemsList(host, port, product.id)
         })("localhost", 5227, 'Припои и сплавы')
     </script>
 </head>

@@ -43,6 +43,10 @@
     flex-direction: column;
 }
 
+.links__product-items h3 {
+    color: #b8cce4;
+}
+
 .links__product-items a {
     display: flex;
     padding: 12px 0px;
@@ -55,7 +59,7 @@
 
 .links__product-items a:hover {
     background-color: var(--bg);
-    border-bottom: thin solid rgba(184, 204, 228, .5);
+    border-bottom: thin solid rgba(184, 204, 228, .65);
 }
 
 .links__product-items a:hover > .link__details {
@@ -65,6 +69,11 @@
 .product-item__data {
     font-size: 16px;
     font-weight: 700;
+    width: 265px;
+}
+
+.product-item__data span {
+    font-size: 12px;
 }
 
 .item__data {
