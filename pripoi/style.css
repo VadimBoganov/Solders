@@ -8,6 +8,10 @@
     pointer-events: none;
 }
 
+.body__header {
+    margin-bottom: 30px;
+}
+
 .body__header-title {
     font-weight: 900;
     font-size: 32px;
@@ -45,6 +49,7 @@
 
 .links__product-items h3 {
     color: #b8cce4;
+    padding-top: 1.2em;
 }
 
 .links__product-items a {
