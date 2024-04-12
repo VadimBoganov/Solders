@@ -5,14 +5,6 @@
     <title>Пос-61</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Sofia+Sans:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="../../components/generator.js"></script>
-    <script type="text/javascript">
-        (async (host, port, productsSelector) => {
-            const products = await GenerateProductsLinks(host, port, productsSelector)
-            let product = products.filter((item) => item.name === productsSelector)[0]
-            await GenerateProductItemsList(host, port, product.id)
-        })("localhost", 5227, 'Припои и сплавы')
-    </script>
 </head>
 <body>
     <div id="header"></div>
@@ -39,11 +31,20 @@
     <link rel="stylesheet" type="text/css" href="../../components/footer/footer.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script src="../../components/header/header.js" type="text/babel"></script>
     <script src="../../components/footer/footer.js" type="text/babel"></script>
+
+    <script src="../../components/generator.js"></script>
+    <script type="text/javascript">
+        (async (host, port, productsSelector) => {
+            await GenerateHeader()
+            await GenerateFooter()
+            const products = await GenerateProductsLinks(host, port, productsSelector)
+            let product = products.filter((item) => item.name === productsSelector)[0]
+            await GenerateProductItemsList(host, port, product.id)
+        })("localhost", 5227, 'Припои и сплавы')
+    </script>
 </body>
 </html>

@@ -1,3 +1,74 @@
+async function GenerateHeader() {
+  let html = `<header class="header">
+    <div class="container">
+        <div class="header__row">
+            <div class="header__logo">
+                <img class="header__logo-img" src="../../images/invert.png" />
+            </div>
+            <button class="header__hamburger" onClick={toggleMenu}>
+                <span class="material-symbols-outlined">menu</span>
+                <span class="material-symbols-outlined disable">close</span>
+            </button>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="../../">Главная</a></li>
+                    <div class="header__dropdown">
+                        <button class="header__dropdown-btn">Продукты <img src="../../images/dropdown.png" /></button>
+                        <div class="header__dropdown-content">
+                            <a href="/metali">Металы</a>
+                            <a href="/pripoi">Припои</a>
+                            <a href="/pripoi">Специальные изделия</a>
+                        </div>
+                    </div>
+                    <li><a class="header__link-3rd" href="../../#Our">О нас</a></li>
+                    <li><a href="../../#contacts">Контакты</a></li>
+                    <li><a href="#">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </header>`      
+
+  document.getElementById('header').innerHTML += html
+}
+
+async function GenerateFooter() {
+  const html = `<footer class="footer">
+      <div class="container">
+          <div class="footer__row">
+              <div class="footer__col">
+                  <img class="footer__img" src="../../images/fulgur0_invert.png"/>
+              </div>
+              <div class="footer__col">
+                  <div class="footer__col-header">Фулгур</div>
+                  <div><a href="../../#Our">О Нас</a></div>
+                  <div><a href="../../#contacts">Контакты</a></div>
+                  <div><a href="#">Статьи</a></div>
+              </div>
+              <div class="footer__col">
+                  <div class="footer__col-header">Продукты</div>
+                  <div><a href="/metali">Металы</a></div>
+                  <div><a href="/pripoi">Припои</a></div>
+              </div>
+              <div class="footer__col">
+                  <div class="footer__col-header">Социальные сети</div>
+                  <div><a class="footer__col-social" href="#">Youtube<img src='https://gk-fulgur.ru/images/youtube.png'/></a></div>
+                  <div><a class="footer__col-social" href="#">Telegram<img src='https://gk-fulgur.ru/images/telegram.png'/></a> </div>
+                  <div><a class="footer__col-social" href="#">Whatsup<img src='https://gk-fulgur.ru/images/whatsapp.png'/></a></div>
+                  <div><a class="footer__col-social" href="#">VK<img src='https://gk-fulgur.ru/images/vk.png'/></a></div>
+              </div>
+              <div class="footer__col">
+                  <div class="footer__col-header">Политика конфиденциальности</div>
+                  <div><p class="footer__text">Любое использование материалов с сайта запрещено без письменного разрешения администрации сайта.</p></div>
+                  <div class="footer__text-end">Copyrights © 2024. Все права защищены</div>
+              </div>
+          </div>
+      </div>
+    </footer>`
+
+    document.getElementById("footer").innerHTML += html
+}
+
 async function GenerateProductsLinks(host, port, selector) {
   let response = await fetch(`http://${host}:${port}/api/products`);
   let products = await response.json();
