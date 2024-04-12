@@ -81,6 +81,7 @@
     display: block;
     font-size: 14px;
     transition: var(--transition); 
+    width: 180px;
 }
   
 .header__dropdown-content a:hover {

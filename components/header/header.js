@@ -18,6 +18,7 @@ function Header() {
                                 <div className="header__dropdown-content">
                                     <a href="/metali">Металы</a>
                                     <a href="/pripoi">Припои</a>
+                                    <a href="/pripoi">Специальные изделия</a>
                                 </div>
                             </div>
                             <li><a className="header__link-3rd" href="../../#Our">О нас</a></li>
