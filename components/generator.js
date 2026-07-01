@@ -3,7 +3,7 @@ async function GenerateHeader() {
     <div class="container">
         <div class="header__row">
             <div class="header__logo">
-                <img class="header__logo-img" src="../../images/invert.png" />
+                <img class="header__logo-img" src="/images/invert.png" />
             </div>
             <button class="header__hamburger" onClick={toggleMenu}>
                 <span class="material-symbols-outlined">menu</span>
@@ -11,18 +11,17 @@ async function GenerateHeader() {
             </button>
             <nav class="header__nav">
                 <ul>
-                    <li><a href="../../">Главная</a></li>
+                    <li><a href="/">Главная</a></li>
                     <div class="header__dropdown">
-                        <button class="header__dropdown-btn">Продукты <img src="../../images/dropdown.png" /></button>
+                        <button class="header__dropdown-btn">Продукты <img src="/images/dropdown.png" /></button>
                         <div class="header__dropdown-content">
-                            <a href="/metali">Металы</a>
+                            <a href="/metali">Металлы</a>
                             <a href="/pripoi">Припои</a>
-                            <a href="/pripoi">Специальные изделия</a>
                         </div>
                     </div>
-                    <li><a class="header__link-3rd" href="../../#Our">О нас</a></li>
-                    <li><a href="../../#contacts">Контакты</a></li>
-                    <li><a href="#">Статьи</a></li>
+                    <li><a class="header__link-3rd" href="/#Our">О нас</a></li>
+                    <li><a href="/#contacts">Контакты</a></li>
+                    <li><a href="/stati">Статьи</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,17 +36,17 @@ async function GenerateFooter() {
       <div class="container">
           <div class="footer__row">
               <div class="footer__col">
-                  <img class="footer__img" src="../../images/fulgur0_invert.png"/>
+                  <img class="footer__img" src="/images/fulgur0_invert.png"/>
               </div>
               <div class="footer__col">
                   <div class="footer__col-header">Фулгур</div>
-                  <div><a href="../../#Our">О Нас</a></div>
-                  <div><a href="../../#contacts">Контакты</a></div>
-                  <div><a href="#">Статьи</a></div>
+                  <div><a href="/#Our">О Нас</a></div>
+                  <div><a href="/#contacts">Контакты</a></div>
+                  <div><a href="/stati">Статьи</a></div>
               </div>
               <div class="footer__col">
                   <div class="footer__col-header">Продукты</div>
-                  <div><a href="/metali">Металы</a></div>
+                  <div><a href="/metali">Металлы</a></div>
                   <div><a href="/pripoi">Припои</a></div>
               </div>
               <div class="footer__col">
@@ -73,7 +72,7 @@ async function GenerateProductsLinks(host, port, selector) {
   let response = await fetch(`http://${host}:${port}/api/products`);
   let products = await response.json();
 
-  products.forEach((product) => {
+  products.filter((product) => product.link !== '#').forEach((product) => {
     let link = document.createElement("a");
     link.setAttribute("href", product.link);
     link.innerHTML = product.name;
@@ -90,16 +89,16 @@ async function GenerateProductsLinks(host, port, selector) {
 }
 
 async function GenerateProductTypesLinks(host, port, productId, selector) {
+  // Type navigation removed from mark pages — now lives on category pages via GenerateTypeNav
+}
+
+async function GenerateTypeNav(host, port, productId) {
   let productTypes = await GetProductTypes(host, port)
 
   productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let link = document.createElement("a");
-    link.setAttribute("href", pt.link);
+    link.setAttribute("href", `#type-${pt.id}`);
     link.innerHTML = pt.name;
-
-    if (pt.name == selector)
-      link.classList.add("checked")
-
     document.getElementsByClassName("links__table-items")[0].appendChild(link);
   });
 }
@@ -113,6 +112,7 @@ async function GenerateProductItemsList(host, port, productId) {
   productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let subTypes = productSubTypes.filter((pst) => pst.productTypeId === pt.id)
     let h = document.createElement("h3")
+    h.setAttribute("id", `type-${pt.id}`)
     h.innerHTML += `${pt.name}:`
     document.getElementsByClassName("links__product-items")[0].appendChild(h)
     
@@ -166,12 +166,9 @@ async function GenerateItems(host, port, selector) {
 
     let priceDiv = document.createElement("div");
     priceDiv.classList.add("card__price");
-    priceDiv.innerHTML =
-      `Цена ${item.isFullPrice ? 'от ' : ''}` +
-      '<span class="card__price-span">' +
-      item.price +
-      " &#8381" +
-      "</span>";
+    priceDiv.innerHTML = item.price > 0
+      ? `Цена ${item.isFullPrice ? 'от ' : ''}` + '<span class="card__price-span">' + item.price + " &#8381" + "</span>"
+      : `Цена <span class="card__price-span card__price-span--negotiable">договорная*</span>`;
 
     let descriptionDiv = document.createElement("div");
     descriptionDiv.classList.add("card__description");
@@ -184,9 +181,9 @@ async function GenerateItems(host, port, selector) {
 
     bodyDiv.appendChild(descriptionDiv);
 
-    let button = document.createElement("button");
+    let button = document.createElement("a");
     button.classList.add("card__button");
-    button.setAttribute("type", "button");
+    button.setAttribute("href", "/#contacts");
     button.innerHTML = "Заказать";
 
     bodyDiv.appendChild(button);
@@ -196,8 +193,10 @@ async function GenerateItems(host, port, selector) {
     img.setAttribute("alt", item.name);
     img.classList.add("card__img");
 
-    let imgLink = document.createElement("a");
-    imgLink.setAttribute("href", item.link);
+    let imgLink = item.link
+      ? document.createElement("a")
+      : document.createElement("div");
+    if (item.link) imgLink.setAttribute("href", item.link);
     imgLink.appendChild(img)
 
     let containerDiv = document.createElement("div");
@@ -210,6 +209,85 @@ async function GenerateItems(host, port, selector) {
       .getElementsByClassName("body__cards")[0]
       .appendChild(containerDiv);
   });
+
+}
+
+async function GenerateItemPage(host, port, productsSelector, productPath, productTypeSelector, markSelector, formName) {
+  const productItems = await GetProductItems(host, port)
+  const mark = productItems.filter((pi) => pi.name === markSelector)[0]
+
+  const items = await GetItems(host, port)
+  const siblings = items.filter((i) => i.productItemId === mark.id)
+  const current = siblings.filter((i) => i.name === formName)[0]
+
+  const breadcrumbs = document.getElementsByClassName("item__breadcrumbs")[0]
+  breadcrumbs.innerHTML =
+    `<a href="/">Главная</a> &gt; ` +
+    `<a href="${productPath}">${productsSelector}</a> &gt; ` +
+    `<a href="${mark.link}">${markSelector}</a> &gt; ` +
+    `<span>${formName}</span>`
+
+  if (current) {
+    const priceEl = document.getElementsByClassName("item__price")[0]
+    priceEl.innerHTML = current.price
+      ? `Цена ${current.isFullPrice ? "от " : ""}<span class="item__price-value">${current.price} ₽/кг</span>`
+      : `Цена <span class="item__price-value">договорная*</span>`
+
+    if (current.imageUrl) {
+      document.getElementsByClassName("item__img")[0].setAttribute("src", current.imageUrl)
+    }
+  }
+
+  const seeAlso = document.getElementsByClassName("item__seealso")[0]
+  siblings.filter((i) => i.name !== formName).forEach((i) => {
+    const link = document.createElement("a")
+    link.setAttribute("href", i.link)
+    link.innerHTML = i.name
+    seeAlso.appendChild(link)
+  })
+}
+
+async function GenerateArticlesList(host, port) {
+  const productItems = await GetProductItems(host, port)
+  const items = await GetItems(host, port)
+  const articles = items.filter((i) => i.link)
+
+  const grouped = {}
+  articles.forEach((i) => {
+    const mark = productItems.find((pi) => pi.id === i.productItemId)
+    if (!mark) return
+    if (!grouped[mark.name]) grouped[mark.name] = { markLink: mark.link, forms: [] }
+    grouped[mark.name].forms.push(i)
+  })
+
+  const container = document.getElementsByClassName("links__product-items")[0]
+  Object.entries(grouped).forEach(([markName, { markLink, forms }]) => {
+    let h = document.createElement("h3")
+    h.innerHTML = markName
+    container.appendChild(h)
+
+    forms.forEach((item) => {
+      let link = document.createElement("a")
+      link.setAttribute("href", item.link)
+
+      let nameDiv = document.createElement("div")
+      nameDiv.classList.add("product-item__data")
+      nameDiv.innerHTML = item.name
+
+      let detailsDiv = document.createElement("div")
+      detailsDiv.classList.add("link__details")
+      detailsDiv.innerHTML = "Читать"
+
+      link.appendChild(nameDiv)
+      link.appendChild(detailsDiv)
+      container.appendChild(link)
+    })
+  })
+}
+
+async function GetProducts(host, port) {
+  let response = await fetch(`http://${host}:${port}/api/products`)
+  return await response.json()
 }
 
 async function GetProductTypes(host, port) {

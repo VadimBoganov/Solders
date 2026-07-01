@@ -1,8 +1,24 @@
 <html lang="ru">
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(71612554, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true,
+             webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71612554" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пос-61</title>
+    <title>Припои и сплавы - цена и характеристики | Фулгур</title>
+    <meta name="description" content="Каталог припоев и сплавов: оловянно-свинцовые, индиевые, висмутовые, баббиты и другие. Цена и характеристики от производителя, доставка по всей России.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Sofia+Sans:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -11,6 +27,7 @@
     <div class="links">
         <div class="container">
             <div class="links__table-products"></div>
+            <div class="links__table-items"></div>
         </div>
     </div>
   
@@ -29,12 +46,7 @@
     <link rel="stylesheet" type="text/css" href="../../components/common.css">
     <link rel="stylesheet" type="text/css" href="../../components/header/header.css">
     <link rel="stylesheet" type="text/css" href="../../components/footer/footer.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-    <script src="../../components/header/header.js" type="text/babel"></script>
-    <script src="../../components/footer/footer.js" type="text/babel"></script>
+    <link rel="stylesheet" type="text/css" href="../../components/categorypage.css">
 
     <script src="../../components/generator.js"></script>
     <script type="text/javascript">
@@ -43,6 +55,7 @@
             await GenerateFooter()
             const products = await GenerateProductsLinks(host, port, productsSelector)
             let product = products.filter((item) => item.name === productsSelector)[0]
+            await GenerateTypeNav(host, port, product.id)
             await GenerateProductItemsList(host, port, product.id)
         })("localhost", 5227, 'Припои и сплавы')
     </script>
