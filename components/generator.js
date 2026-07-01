@@ -59,7 +59,7 @@ async function GenerateFooter() {
               <div class="footer__col">
                   <div class="footer__col-header">Политика конфиденциальности</div>
                   <div><p class="footer__text">Любое использование материалов с сайта запрещено без письменного разрешения администрации сайта.</p></div>
-                  <div class="footer__text-end">Copyrights © 2024. Все права защищены</div>
+                  <div class="footer__text-end">Copyrights © 2026. Все права защищены</div>
               </div>
           </div>
       </div>
