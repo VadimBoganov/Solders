@@ -1,0 +1,7 @@
+.git
+.claude
+.gigacode
+node_modules
+README.md
+.htaccess
+yarn.lock
