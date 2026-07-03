@@ -1,18 +1,7 @@
 ﻿<html lang="ru">
 <head>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(71612554, "init", {
-             clickmap:true,
-             trackLinks:true,
-             accurateTrackBounce:true,
-             webvisor:true
-        });
-    </script>
+    <script src="/js/metrika.js"></script>
     <noscript><div><img src="https://mc.yandex.ru/watch/71612554" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
@@ -100,15 +89,6 @@
     <link rel="stylesheet" type="text/css" href="../../components/markpage.css">
 
     <script src="../../components/generator.js"></script>
-    <script type="text/javascript">
-        (async (host, port, productsSelector, productTypeSelector, itemsSelector) => {
-            await GenerateHeader()
-            await GenerateFooter()
-            const products = await GenerateProductsLinks(host, port, productsSelector)
-            let product = products.filter((item) => item.name === productsSelector)[0]
-            await GenerateProductTypesLinks(host, port, product.id, productTypeSelector)
-            await GenerateItems(host, port, itemsSelector)
-        })("localhost", 5227, 'Припои и сплавы', 'Оловянно-свинцовые', 'Пос-30')
-    </script>
+    <script src="init.js"></script>
 </body>
 </html>

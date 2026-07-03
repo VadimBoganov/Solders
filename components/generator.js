@@ -68,8 +68,8 @@ async function GenerateFooter() {
     document.getElementById("footer").innerHTML += html
 }
 
-async function GenerateProductsLinks(host, port, selector) {
-  let response = await fetch(`http://${host}:${port}/api/products`);
+async function GenerateProductsLinks(selector) {
+  let response = await fetch(`/api/products`);
   let products = await response.json();
 
   products.filter((product) => product.link !== '#').forEach((product) => {
@@ -88,12 +88,12 @@ async function GenerateProductsLinks(host, port, selector) {
   return products;
 }
 
-async function GenerateProductTypesLinks(host, port, productId, selector) {
+async function GenerateProductTypesLinks(productId, selector) {
   // Type navigation removed from mark pages — now lives on category pages via GenerateTypeNav
 }
 
-async function GenerateTypeNav(host, port, productId) {
-  let productTypes = await GetProductTypes(host, port)
+async function GenerateTypeNav(productId) {
+  let productTypes = await GetProductTypes()
 
   productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let link = document.createElement("a");
@@ -103,11 +103,11 @@ async function GenerateTypeNav(host, port, productId) {
   });
 }
 
-async function GenerateProductItemsList(host, port, productId) {
-  let productTypes = await GetProductTypes(host, port)
-  let productSubTypes = await GetProductSubTypes(host, port)
-  let productItems = await GetProductItems(host, port)
-  let items = await GetItems(host, port)
+async function GenerateProductItemsList(productId) {
+  let productTypes = await GetProductTypes()
+  let productSubTypes = await GetProductSubTypes()
+  let productItems = await GetProductItems()
+  let items = await GetItems()
 
   productTypes.filter((pt) => pt.productId === productId).forEach((pt) => {
     let subTypes = productSubTypes.filter((pst) => pst.productTypeId === pt.id)
@@ -149,13 +149,13 @@ async function GenerateProductItemsList(host, port, productId) {
   })
 }
 
-async function GenerateItems(host, port, selector) {
-  response = await fetch(`http://${host}:${port}/api/productitems`);
+async function GenerateItems(selector) {
+  response = await fetch(`/api/productitems`);
   let productItems = await response.json();
   let productItem = productItems.filter((item) => item.name === selector)[0];
 
   response = await fetch(
-    `http://${host}:${port}/api/items/${productItem.id}`
+    `/api/items/${productItem.id}`
   );
   let items = await response.json();
 
@@ -212,11 +212,11 @@ async function GenerateItems(host, port, selector) {
 
 }
 
-async function GenerateItemPage(host, port, productsSelector, productPath, productTypeSelector, markSelector, formName) {
-  const productItems = await GetProductItems(host, port)
+async function GenerateItemPage(productsSelector, productPath, productTypeSelector, markSelector, formName) {
+  const productItems = await GetProductItems()
   const mark = productItems.filter((pi) => pi.name === markSelector)[0]
 
-  const items = await GetItems(host, port)
+  const items = await GetItems()
   const siblings = items.filter((i) => i.productItemId === mark.id)
   const current = siblings.filter((i) => i.name === formName)[0]
 
@@ -247,9 +247,9 @@ async function GenerateItemPage(host, port, productsSelector, productPath, produ
   })
 }
 
-async function GenerateArticlesList(host, port) {
-  const productItems = await GetProductItems(host, port)
-  const items = await GetItems(host, port)
+async function GenerateArticlesList() {
+  const productItems = await GetProductItems()
+  const items = await GetItems()
   const articles = items.filter((i) => i.link)
 
   const grouped = {}
@@ -285,27 +285,27 @@ async function GenerateArticlesList(host, port) {
   })
 }
 
-async function GetProducts(host, port) {
-  let response = await fetch(`http://${host}:${port}/api/products`)
+async function GetProducts() {
+  let response = await fetch(`/api/products`)
   return await response.json()
 }
 
-async function GetProductTypes(host, port) {
-  response = await fetch(`http://${host}:${port}/api/producttypes`);
+async function GetProductTypes() {
+  response = await fetch(`/api/producttypes`);
   return await response.json();
 }
 
-async function GetProductSubTypes(host, port) {
-  let response = await fetch(`http://${host}:${port}/api/productsubtypes`)
+async function GetProductSubTypes() {
+  let response = await fetch(`/api/productsubtypes`)
   return await response.json();
 }
 
-async function GetProductItems(host, port) {
-  let response = await fetch(`http://${host}:${port}/api/productitems`)
+async function GetProductItems() {
+  let response = await fetch(`/api/productitems`)
   return await response.json()
 }
 
-async function GetItems(host, port) {
-  let response = await fetch(`http://${host}:${port}/api/items`)
+async function GetItems() {
+  let response = await fetch(`/api/items`)
   return await response.json()
 }
